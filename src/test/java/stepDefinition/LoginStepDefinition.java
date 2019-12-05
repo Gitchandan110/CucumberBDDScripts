@@ -2,6 +2,8 @@ package stepDefinition;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,24 +17,33 @@ import cucumber.api.java.en.When;
 
 public class LoginStepDefinition {
 	
+	public static WebDriver driver;
 	
-	WebDriver driver;
+//Gherkin keywords are : Given, Then, When, As, But, 	
+	
+	@Given("^user opens chrome driver$")
+		
+	public static WebDriver user_opens_chrome_driver() {
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Chandan\\Git\\ArtifactMaven\\Test Data\\chromedriver.exe");
+        driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+	    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		return driver;
 	
 	
-	@Given("^user navigates to https://safety-red5.kuvrr.com/$")
-		
-	public void user_navigates_to_homepage() {
-		
-		
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Chandan\\git\\repository\\ArtifactIdCucumberBDD\\TestData\\chromedriver.exe");
-	driver=new ChromeDriver();
-	driver.manage().window().maximize();
-	//driver.manage().deleteAllCookies();
-	driver.get("https://safety-red5.kuvrr.com");
+	}
 	
+	@Given("^user navigates to https://safety.kuvrr.com/$")
+	
+	public void user_navigates_to_loginPage() {
 		
+		driver.get("https://safety.kuvrr.com");
 		
 	}
+	
 	
 	@When("^title of the login page is Safety Kuvrr$")
 	

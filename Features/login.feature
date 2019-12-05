@@ -6,7 +6,8 @@ Feature: Safety Login feature
 Scenario:Login Functionality
 
 
-	Given user navigates to https://safety-red5.kuvrr.com/
+	Given user opens chrome driver
+	Given user navigates to https://safety.kuvrr.com/
 	When title of the login page is Safety Kuvrr
 	Then user enters email "admin" and password "secret"
 	Then user click on continue button
