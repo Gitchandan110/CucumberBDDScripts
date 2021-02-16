@@ -16,72 +16,41 @@ formatter.scenario({
 });
 formatter.step({
   "line": 9,
-  "name": "user navigates to https://safety-red5.kuvrr.com/",
+  "name": "user opens chrome driver",
   "keyword": "Given "
 });
 formatter.step({
   "line": 10,
+  "name": "user navigates to https://safety.kuvrr.com/",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
   "name": "title of the login page is Safety Kuvrr",
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
+  "line": 12,
   "name": "user enters email \"admin\" and password \"secret\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 12,
+  "line": 13,
   "name": "user click on continue button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 13,
+  "line": 14,
   "name": "user is on home Page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginStepDefinition.user_navigates_to_homepage()"
+  "location": "LoginStepDefinition.user_opens_chrome_driver()"
 });
 formatter.result({
-  "duration": 15930492999,
+  "duration": 8447418500,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginStepDefinition.verifyloginPageTitle()"
-});
-formatter.result({
-  "duration": 82928099,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "admin",
-      "offset": 19
-    },
-    {
-      "val": "secret",
-      "offset": 40
-    }
-  ],
-  "location": "LoginStepDefinition.fillUserCredential(String,String)"
-});
-formatter.result({
-  "duration": 3262299600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginStepDefinition.clickContinue()"
-});
-formatter.result({
-  "duration": 52294900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginStepDefinition.user_is_on_home_page()"
-});
-formatter.result({
-  "duration": 20390801,
-  "status": "passed"
-});
+  "location": "LoginStepDefinition.OpenloginPage()"
 });

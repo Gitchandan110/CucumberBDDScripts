@@ -15,18 +15,19 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+
 public class LoginStepDefinition {
 	
 	public static WebDriver driver;
 	
-//Gherkin keywords are : Given, Then, When, As, But, 	
+
 	
 	@Given("^user opens chrome driver$")
 		
 	public static WebDriver user_opens_chrome_driver() {
 		
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Chandan\\Git\\ArtifactMaven\\Test Data\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Chandan\\Git\\ArtifactIdCucumberBDD\\Test Data\\chromedriver.exe");
         driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -40,7 +41,7 @@ public class LoginStepDefinition {
 	
 	public void user_navigates_to_loginPage() {
 		
-		driver.get("https://safety.kuvrr.com");
+		driver.get("https://safety-test.kuvrr.com/");
 		
 	}
 	

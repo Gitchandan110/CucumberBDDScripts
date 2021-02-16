@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="1">
-
-<listeners>
-        <listener class-name="com.ExtentReportListner.ExtentReporterNG" />
-    </listeners>
-
-
-  <test thread-count="5" name="Test" parallel="false">
-    <classes>
-      
-    
-      <class name="com.TestNGScript.file.LoginSafetyKuvrr"/>
-      <class name="com.TestNGScript.file.SafetyKuvrrBroadcast"/>
-      <class name="com.TestNGScript.file.SafetyKuvrrHomePageMenu"/>
-    <!--     <class name="com.TestNGScript.file.LoginAmazon"/>
-      <class name="com.TestNGScript.file.HomeAmazon"/>
-       -->
-      
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" verbose="1">
+    <test name="Regression Tests">
+        <classes>
+            <class name="TestRunner.TestRunner">
+            </class>
+        </classes>
+    </test>
+</suite>
