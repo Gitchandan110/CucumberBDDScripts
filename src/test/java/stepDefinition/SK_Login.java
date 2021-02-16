@@ -16,7 +16,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
-public class LoginSK_StepDefinition {
+public class SK_Login {
 	
 	public static WebDriver driver;
 	
