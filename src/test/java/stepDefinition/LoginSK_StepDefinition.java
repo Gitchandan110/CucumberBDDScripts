@@ -16,7 +16,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
-public class LoginStepDefinition {
+public class LoginSK_StepDefinition {
 	
 	public static WebDriver driver;
 	
@@ -62,7 +62,7 @@ public class LoginStepDefinition {
 		
 		driver.findElement(By.cssSelector("input[type='text'][id='email']")).sendKeys(email);
 		driver.findElement(By.cssSelector("input[type='password'][id='password']")).sendKeys(password);
-		driver.findElement(By.cssSelector("input[class='btn'][id='submit']")).click();
+	
 		
 			
 	}
