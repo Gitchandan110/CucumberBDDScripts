@@ -8,7 +8,7 @@ bottom of each instrument image and should not overlap or cover the actual instr
 Scenario:See Checkboxes on Items
 
 
-Given Surgeon navigates to https://dev.ortelligence.com/#/
+Given Surgeon navigates to https://dev.ortelligence.com/
 And I log into Ortelligence Application
 And I access the surgery screen
 When I see a tray for a procedure
