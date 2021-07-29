@@ -17,7 +17,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
-public class OR1197S1 extends Base{
+public class OR1197 extends Base{
 	
 	public static WebDriver driver;
 	
@@ -26,22 +26,37 @@ public class OR1197S1 extends Base{
 	
 	public void OpenloginPage() throws Exception {
 		
-		openApp();
+		
+		try {	
+			String url="https://dev.ortelligence.com";
+			System.setProperty("webdriver.chrome.driver",".\\Test Data\\chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+			driver.get(url);
+			System.out.println("Starting App");
+			Thread.sleep(10000);
+			Base.FullPageScreenShot("LoginScreen");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@And("^I log into Ortelligence Application$")
 	
-	public void verifylogin(String userName, String password) {
+	public void verifylogin() throws InterruptedException {
 		
-	String pageTitle=driver.getTitle();	
-	System.out.println("Login Page Title is :"+pageTitle);
-	assertEquals(pageTitle, "ortelligence");
-    driver.findElement(By.id("userName")).sendKeys(userName);
-	driver.findElement(By.id("userPassword")).sendKeys(password);
-	WebElement btnContinue=driver.findElement(By.xpath("//button[contains(text(),'Sign In')]"));
+    driver.findElement(By.xpath("//input[@id='username']")).sendKeys("christiana_superuser@mailinator.com");
+    driver.findElement(By.xpath("//input[@id='password']")).sendKeys("ORT@54321");
+	WebElement btnContinue=driver.findElement(By.xpath("//button[contains(text(),'Sign On')]"));
 	JavascriptExecutor js=(JavascriptExecutor)driver;
 	js.executeScript("arguments[0].click();",btnContinue);	
-			
+	Thread.sleep(10000);
+	String pageTitle=driver.getTitle();
+	System.out.println("Home Page Title is :"+pageTitle);
+	assertEquals(pageTitle, "ortelligence");	
 	}
 	
 	
@@ -49,9 +64,7 @@ public class OR1197S1 extends Base{
 	
 	public void surgeryScreen() {
 		
-	String pageTitle=driver.getTitle();
-	System.out.println("Home Page Title is :"+pageTitle);
-	assertEquals(pageTitle, "ortelligence");
+    driver.findElement(By.linkText("ORtelligence")).click();
 		
 		
 	}
